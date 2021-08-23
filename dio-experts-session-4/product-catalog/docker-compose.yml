@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+
+  elasticsearch:
+    container_name: "elasticsearch"
+    image: elasticsearch:8.0.0-alpha1-arm64
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      - discovery.type-single-node
+      
+  redis:
+    container_name: "redis"
+    image: latest
+    ports:
+      - 6379:6379
